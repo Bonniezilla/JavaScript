@@ -6,30 +6,36 @@ function escrevaParagrafo() {
 function diaHora() {
     const today = new Date();
     const weekday = today.getDay();
-    var diaHoraEl = document.getElementById('diahora');
+    var diatualEl = document.getElementById('diaatual');
+    var horatualEl = document.getElementById('horaatual');
 
     switch (weekday) {
         case 1:
-            diaHoraEl.textContent = 'Segunda-feira';
+            diatualEl.textContent = 'Segunda-feira';
             break;
         case 2:
-            diaHoraEl.textContent = 'Terça-feira';
+            diatualEl.textContent = 'Terça-feira';
             break;
         case 3:
-            diaHoraEl.textContent = 'Quarta-feira';
+            diatualEl.textContent = 'Quarta-feira';
             break;
         case 4:
-            diaHoraEl.textContent = 'Quinta-feira';
+            diatualEl.textContent = 'Quinta-feira';
             break;
         case 5:
-            diaHoraEl.textContent = 'Sexta-feira';
+            diatualEl.textContent = 'Sexta-feira';
             break;
         case 6:
-            diaHoraEl.textContent = 'Sábado';
+            diatualEl.textContent = 'Sábado';
             break;
-        case 7:
-            diaHoraEl.textContent = 'Domingo';
+        case 0:
+            diatualEl.textContent = 'Domingo';
             break;
+    }
+    for (var i = 0; i < 10; i++) {
+        setInterval(() => {
+            horatualEl.textContent = today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
+        }, 1000);
     }
 }
 
@@ -47,10 +53,30 @@ function calculaArea() {
     calculoEl.textContent = calculoArea;
 }
 
-function giraNome() {
-    var nome = ['w','3','r','e','s','o','u','r','c','e'];
+function diasNatal() {
+   
+}
 
-    for (var i = 1; i > 0; i++) {
-        
+// function numDias () {
+//     var objData = new Date(),
+//     numAno = objData.getFullYear(),
+//     numMes = objData.getMonth()+1,
+//     numDias = new Date(numAno, numMes, 0).getDate();
+
+//             for (var i = 0; i < 9; i++) {
+//                 console.log(numDias);
+//             }
+// }
+ 
+function numDias() {
+    var objData = new Date(),
+    numAno = objData.getFullYear(),
+    numMes = objData.getMonth()+1,
+    xmasData = new Date('December 25, 2023'),
+    xmasNumMonth = xmasData.getMonth()+1,
+    numDias = new Date(numAno, numMes, 0).getDate();
+    for (var i = 3; i < 12; i++) {
+        numMes = objData.getMonth()+i;
+        console.log(numDias);
     }
 }
